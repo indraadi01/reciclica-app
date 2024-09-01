@@ -34,7 +34,7 @@ export class AuthService {
           observer.error(error);
           observer.complete();
         })
-      })
+      }) 
     });
   }
 }

@@ -16,7 +16,7 @@ describe('LoadingStore', () => {
       show: true
     };
     const newState = loadingReducer(initialState, hide());
-    expect(newState).toEqual({show: false});
+    expect(newState).toEqual({show: false}); 
   })
   it('should keep state if action is unknown', () => {
     const initialState: LoadingState = {show: true};

@@ -12,7 +12,7 @@ export const environment = {
   appId: "1:167230604751:web:902f1ba570b5b179477eba"
   },
   production: false
-};
+}; 
 
 /*
  * For easier debugging in development mode, you can import the following file

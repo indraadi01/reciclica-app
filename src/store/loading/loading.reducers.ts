@@ -18,6 +18,6 @@ const reducer = createReducer(
    })
 );
 
-export function loadingReducer(state: LoadingState, action: Action) {
+export function loadingReducer(state: LoadingState, action: Action<string>) {
   return reducer(state, action);
 }

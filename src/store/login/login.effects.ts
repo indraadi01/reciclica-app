@@ -19,7 +19,7 @@ export class LoginEffects {
         switchMap((payload: {email: string}) => this.authService.recoverEmailPassword(payload.email).pipe(
             map(() => recoverPasswordSuccess()),
             catchError(error => of(recoverPasswordFail({error})))
-        ))
+        )) 
     ))
 
     login$ = createEffect(() => this.actions$.pipe(

@@ -3,9 +3,7 @@ import { login, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } f
 import { loginReducer } from "./login.reducers";
 import { LoginState } from "./LoginState";
 import { User } from "src/app/model/user/User";
-import { loginFail, loginSuccess  } from "./login.action";
-
-import { IMPORT_STATE } from "@ngrx/store-devtools/src/actions";
+import { loginFail, loginSuccess } from "./login.action";
 
 describe("Login store", () => {
 
