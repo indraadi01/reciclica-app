@@ -1,17 +1,9 @@
 import { AppInitialState } from "../AppInitialState";
-<<<<<<< HEAD
 import { login, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "./login.actions";
 import { loginReducer } from "./login.reducers";
 import { LoginState } from "./LoginState";
 import { User } from "src/app/model/user/User";
 import { loginFail, loginSuccess } from "./login.actions";
-=======
-import { login, recoverPassword, recoverPasswordFail, recoverPasswordSuccess } from "./login.action";
-import { loginReducer } from "./login.reducers";
-import { LoginState } from "./LoginState";
-import { User } from "src/app/model/user/User";
-import { loginFail, loginSuccess } from "./login.action";
->>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 
 describe("Login store", () => {
 
@@ -92,8 +84,4 @@ describe("Login store", () => {
             isLoggingIn: false
         })
     })
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
