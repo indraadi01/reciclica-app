@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router';  // Impor Router untuk navigasi
 
 @Component({
   selector: 'app-home',
@@ -7,17 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  hasHeader: boolean = true;  // Add this property
+  hasFooter: boolean = true;
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  goToPickupCalls(){
-    this.router.navigate(['pickup-calls']);
-  }
-  goToPickupCall(){
-    this.router.navigate(['pickup-call']);
+  goToPickupCalls() {
+    this.router.navigate(['/pickup-calls']);
   }
 
+  newToPickupCall(){
+    this.router.navigate(['/pickup-call']);
+  }
 }

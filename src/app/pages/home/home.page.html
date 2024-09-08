@@ -1,54 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="success">
-    <ion-title>Indra Adi's App</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button>
 
       </ion-menu-button>
-
     </ion-buttons>
+    <ion-title>Reciclica</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content>
   <ion-list color="success">
     <ion-item color="success">
       <ion-avatar slot="start">
-        <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png">
+        <img src="https://www.svgrepo.com/show/408476/user-person-profile-block-account-circle.svg">
       </ion-avatar>
       <ion-label>
-        <h2>Indra Adi</h2>
-        <p>Gathered: <span class="money">$ 15,00</span></p>
+        <h1>Indra's App</h1>
+        <p>Gathered: <span class="money">$ 20,00</span></p>
       </ion-label>
     </ion-item>
   </ion-list>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+
+  <app-pickup-call-card [hasFooter]="true" status="hold" updatedAt="24/08/2024 09:09:00"
+    createdAt="23/08/2024" notes="We have two bags that are full, one with plastic and the other with glasses">
+    <ion-card-header header>
+      <ion-card-subtitle>Last pick up call</ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon name="hourglass-outline" slot="start" color="warning"></ion-icon>
-        <ion-label>
-          On hold
-          <p>25/04/2021 16:29</p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <p>Created at 25/04/2021</p>
-          <p>Notes: we have two bags that are full, one with plastic and the other with glasses.</p>
-        </ion-label>
-      </ion-item>
-      <ion-button color="success" fill="clear" size="full" (click)="goToPickupCalls()">See all...</ion-button>
-    </ion-card-content>
-  </ion-card>
+    <ion-button fill="clear" color="success" size="full" footer (click)="goToPickupCalls()">See all...</ion-button>
+  </app-pickup-call-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success" (click)="goToPickupCall()">
+    <ion-fab-button color="success" (click)="newToPickupCall()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>
