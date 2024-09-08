@@ -7,7 +7,12 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { LoginEffects } from "./login.effects";
 
 import { Observable, of, throwError } from "rxjs";
+<<<<<<< HEAD
 import { recoverPassword, recoverPasswordSuccess, recoverPasswordFail, loginSuccess, loginFail, login } from "./login.actions";
+=======
+import { recoverPassword, recoverPasswordSuccess, recoverPasswordFail, loginSuccess, loginFail, login } from "./login.action";
+
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 
 import { provideMockActions } from "@ngrx/effects/testing";
 
@@ -89,4 +94,8 @@ describe("Login effects", () => {
         })
     })
 
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782

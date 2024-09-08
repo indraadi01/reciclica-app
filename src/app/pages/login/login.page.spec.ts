@@ -8,6 +8,7 @@ import { Store, StoreModule } from '@ngrx/store';
 import { loadingReducer } from 'src/store/loading/loading.reducers';
 import { loginReducer } from 'src/store/login/login.reducers';
 import { AppState } from 'src/store/AppState';  // Corrected import for AppState
+<<<<<<< HEAD
 import { 
   recoverPassword, 
   recoverPasswordFail, 
@@ -16,6 +17,14 @@ import {
   loginFail,       // Add this import
   loginSuccess
 } from 'src/store/login/login.actions';
+=======
+import { recoverPassword,
+  recoverPasswordFail,
+  recoverPasswordSuccess,
+  login,          // Add this import
+  loginFail,       // Add this import
+  loginSuccess } from 'src/store/login/login.action';
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -136,9 +145,25 @@ describe('LoginPage', () => {
     })
     expect(router.navigate).toHaveBeenCalledWith(['home']);
   })
+<<<<<<< HEAD
   
   it('given user is logging in, when fail, then hide loading and show error message', () =>{
     spyOn(toastController, 'create').and.returnValue(<any> Promise.resolve({present: () => {}}));
+=======
+
+  it('given user is logging in, when fail, then hide loading and show error message', () =>{
+    spyOn(toastController, 'create').and.returnValue(<any> Promise.resolve({present: () => {}}));
+
+    fixture.detectChanges();
+    store.dispatch(login({email: "valid@gmail.com", password: "anyPassword"}));
+    store.dispatch(loginFail({error:"message"}));
+    store.select('loading').subscribe(loadingState => {
+      expect(loadingState.show).toBeFalsy();
+    })
+
+    expect(toastController.create).toHaveBeenCalledTimes(1);
+  })
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 
     fixture.detectChanges();
     store.dispatch(login({email: "valid@gmail.com", password: "anyPassword"}));

@@ -3,7 +3,10 @@ import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user/User';
 import { AngularFireAuth } from '@angular/fire/compat/auth'; // Import AngularFireAuth
 import * as firebase from 'firebase/compat/app'
+<<<<<<< HEAD
 import { UserRegister } from 'src/app/model/user/UserRegister';
+=======
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +15,7 @@ export class AuthService {
 
   constructor(private auth: AngularFireAuth) { }
 
+<<<<<<< HEAD
   register(userRegister: UserRegister): Observable<void> {
     return new Observable<void>(observer => {
       setTimeout(() => {
@@ -25,6 +29,8 @@ export class AuthService {
     });
   }
 
+=======
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
   recoverEmailPassword(email: string): Observable<void> {
     return new Observable<void>(observer => {
       this.auth.sendPasswordResetEmail(email).then(() => {
@@ -48,7 +54,11 @@ export class AuthService {
           observer.error(error);
           observer.complete();
         })
+<<<<<<< HEAD
       })
+=======
+      }) 
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
     });
   }
 }

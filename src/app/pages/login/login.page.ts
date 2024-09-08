@@ -7,8 +7,14 @@ import { Validators } from '@angular/forms';
 import { show, hide } from 'src/store/loading/loading.action'; // Combined import
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/store/AppState';
+<<<<<<< HEAD
 import { recoverPassword, recoverPasswordSuccess, recoverPasswordFail, login, loginSuccess, loginFail } from 'src/store/login/login.actions'; // Combined import
 import { NavController, ToastController } from '@ionic/angular';
+=======
+
+import { recoverPassword, recoverPasswordSuccess, recoverPasswordFail, login, loginSuccess, loginFail } from 'src/store/login/login.action'; // Combined import
+import { ToastController } from '@ionic/angular';
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 import { LoginState } from 'src/store/login/LoginState';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Subscription } from 'rxjs';
@@ -25,7 +31,11 @@ export class LoginPage implements OnInit, OnDestroy {
   loginStateSubscription!: Subscription;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private store: Store<AppState>,
+<<<<<<< HEAD
     private toastController: ToastController, private authService: AuthService, private navController: NavController
+=======
+    private toastController: ToastController, private authService: AuthService
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
   ) { }  // Injeksi Router
 
   ngOnInit() {
@@ -55,10 +65,17 @@ export class LoginPage implements OnInit, OnDestroy {
 
   private onIsLoggedIn(loginState: LoginState){
     if (loginState.isLoggedIn) {
+<<<<<<< HEAD
       this.navController.navigateRoot('home');
     }
   }
   
+=======
+      this.router.navigate(['home']);
+    }
+  }
+
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
   private onError(loginState: LoginState) {
     console.log('onError called with loginState:', loginState);  // Debug log
     if (loginState.error) {
@@ -70,7 +87,11 @@ export class LoginPage implements OnInit, OnDestroy {
       toaster.then(toaster => toaster.present());
     }
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
   private async onIsRecoveredPassword(loginState: LoginState) {
     console.log('onIsRecoveredPassword called with loginState:', loginState);  // Debug log
     if (loginState.isRecoveredPassword) {
@@ -82,7 +103,11 @@ export class LoginPage implements OnInit, OnDestroy {
       toaster.present();
     }
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 
   forgotEmailPassword() {
     this.store.dispatch(recoverPassword({email: this.form.get('email')?.value}));
@@ -97,4 +122,8 @@ export class LoginPage implements OnInit, OnDestroy {
     this.router.navigate(['register']);
   }
 
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782

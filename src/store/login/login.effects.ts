@@ -4,7 +4,11 @@ import { Action } from "@ngrx/store";
 import { Observable, of } from "rxjs";
 import { catchError, map, mergeMap, switchMap, tap } from "rxjs/operators";
 import { AuthService } from "src/app/services/auth/auth.service";
+<<<<<<< HEAD
 import { recoverPassword, recoverPasswordSuccess, recoverPasswordFail, loginSuccess, loginFail, login } from "./login.actions";
+=======
+import { recoverPassword, recoverPasswordSuccess, recoverPasswordFail, loginSuccess, loginFail, login } from "./login.action";
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
 import { ParseSourceFile } from "@angular/compiler";
 
 @Injectable()
@@ -19,7 +23,11 @@ export class LoginEffects {
         switchMap((payload: {email: string}) => this.authService.recoverEmailPassword(payload.email).pipe(
             map(() => recoverPasswordSuccess()),
             catchError(error => of(recoverPasswordFail({error})))
+<<<<<<< HEAD
         ))
+=======
+        )) 
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
     ))
 
     login$ = createEffect(() => this.actions$.pipe(
@@ -31,4 +39,8 @@ export class LoginEffects {
             )
         ))
     )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ce0a256d1543d5f6ac66a3ddc769c755a058d782
